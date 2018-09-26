@@ -8,8 +8,9 @@ $access_token = 'MMTUF+WLBeH9xT8HM22gY9AZP45VKVXtiMi+964d1y7uC7nhm0hn1/kDYM4gcU8
 
 $channelSecret = 'f158371ce9a44946b78ed1b3bda1aea2';
 
-$pushID1 = 'Ucbc90c3adf7bd6c2f5863adfa3f3e1b6';
-$pushID2 = 'U0dbde79e7d0ad555b2ca318e3971cac8';
+$pushID1 = 'Ucbc90c3adf7bd6c2f5863adfa3f3e1b6';//aung
+$pushID2 = 'U0dbde79e7d0ad555b2ca318e3971cac8';//pude
+$pushID3 = 'Uf464659e14ccc0f32f58493e0821f48e';//pair
 
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
@@ -22,6 +23,11 @@ $textMessageBuilder2 = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hell
 $response2 = $bot->pushMessage($pushID2, $textMessageBuilder2);
 
 echo $response2->getHTTPStatus() . ' ' . $response2->getRawBody();
+
+$textMessageBuilder3 = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world Pair');
+$response3 = $bot->pushMessage($pushID3, $textMessageBuilder3);
+
+echo $response3->getHTTPStatus() . ' ' . $response3->getRawBody();
 
 
 
