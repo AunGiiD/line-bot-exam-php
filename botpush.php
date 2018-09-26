@@ -14,11 +14,14 @@ $pushID2 = 'U0dbde79e7d0ad555b2ca318e3971cac8';
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 
-$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world Aung');
-$response = $bot->pushMessage($pushID1, $textMessageBuilder);
-$response = $bot->pushMessage($pushID2, $textMessageBuilder);
+$textMessageBuilder1 = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world Aung');
+$response1 = $bot->pushMessage($pushID1, $textMessageBuilder1);
+echo $response1->getHTTPStatus() . ' ' . $response1->getRawBody();
 
-echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
+$textMessageBuilder2 = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello world Pude');
+$response2 = $bot->pushMessage($pushID2, $textMessageBuilder2);
+
+echo $response2->getHTTPStatus() . ' ' . $response2->getRawBody();
 
 
 
